@@ -7,4 +7,9 @@ using namespace std;
 void menuOpciones();
 void menuPrincipal();
 
+void estadisticas(string nombreRec, int puntajeRec);
+void creditos();
+
+void modoSimulado();
+
 #endif // MENU_H_INCLUDED
