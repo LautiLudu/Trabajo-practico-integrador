@@ -5,12 +5,17 @@
 using namespace std;
 
 /// declaracion de funciones
-void jugar();
+int jugar(string nombre, string &nombreRec, int &puntajeRec);
+void jugar2(string &nombreRec, int &puntajeRec);
 
 void generarDados(int dados[], int cantDados);
 void mostrarDados(int dados[], int cantDados);
 
 int calcularPts(int dados[],int cantDados, int viento1, int viento2);
 int contBloqueados(int dados[], int cantDados, int viento1, int viento2);
+
+bool tormentaPerfecta(int dados[], int cantDados, int viento1, int viento2);
+
+void separacion();
 
 #endif // JUEGO_H_INCLUDED
