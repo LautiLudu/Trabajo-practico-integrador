@@ -204,11 +204,24 @@ void separacion(){
     cout << endl;
 }
 
+int calcularPtsS(int dadosSimulados[], int cantDadosSimulados, int vientoS1, int vientoS2){
+    int puntos = 0;
+
+    for(int i = 0; i < cantDadosSimulados; i++){
+        if(dadosSimulados[i] != vientoS1 && dadosSimulados[i] != vientoS2){
+            puntos += dadosSimulados[i];
+        }
+    }
+    return puntos;
+}
+
 void modoSimulado(){
     system("cls");
 
     int cantDadosSimulados = 5;
     int dadosSimulados[5] = {0};
+
+    int vientoS1, vientoS2;
 
     cout << "** MODO SIMULADO **" << endl;
 
@@ -216,20 +229,55 @@ void modoSimulado(){
     system("pause > nul");
 
     for(int i = 1; i <= cantDadosSimulados; i++){
-    cout << "Cargue manualmente el valor del dado de 6 caras número " << i << ": ";
+    cout << "Valor del dado número " << i << ": ";
     cin >> dadosSimulados[i-1];
-    if(dadosSimulados > 6 || dadosSimulados < 0){
-        cout << "Ingreso un valor invalido para un dado de 6 caras"
-    }
 
+    while(dadosSimulados[i-1] < 1 || dadosSimulados[i-1] > 6){
+
+    cout << "Valor inválido. El número debe estar entre 1 y 6." << endl;
+
+    cout << "Ingrese nuevamente el valor del dado número "<< i << ": ";
+    cin >> dadosSimulados[i-1];
     }
+}
 
     cout << "Los valores cargados a los dados son: ";
 
     for(int i = 0; i < cantDadosSimulados; i++){
     cout << dadosSimulados[i] << " ";
+
     }
     cout << endl;
+
+    cout << "Ingrese el dado de viento número 1: ";
+    cin >> vientoS1;
+
+    while(vientoS1 < 1 || vientoS1 > 6){
+
+    cout << "Valor inválido. El número debe estar entre 1 y 6." << endl;
+
+    cout << "Ingrese nuevamente el dado de viento número 1: ";
+    cin >> vientoS1;
+    }
+
+    cout << "Ingrese el dado de viento número 2: ";
+    cin >> vientoS2;
+
+    while(vientoS1 < 1 || vientoS1 > 6){
+    cout << "Valor inválido. El número debe estar entre 1 y 6." << endl;
+
+    cout << "Ingrese nuevamente el dado de viento número 2: ";
+    cin >> vientoS2;
+    }
+
+    cout << "Los dados de viento son: " << vientoS1 << " y " << vientoS2 << endl;
+
+    int ptsTirada = calcularPtsS(dadosSimulados, cantDadosSimulados, vientoS1, vientoS2);
+
+    separacion();
+
+    cout << "Los puntos de esta tirada serían: " << ptsTirada << " puntos" << endl;
+
     cout << "Presione cualquier tecla para volver al menú" << endl;
     system("pause > nul");
 
