@@ -18,4 +18,6 @@ bool tormentaPerfecta(int dados[], int cantDados, int viento1, int viento2);
 
 void separacion();
 
+int calcularPtsS(int dadosSimulados[], int cantDadosSimulados, int vientoS1, int vientoS2);
+
 #endif // JUEGO_H_INCLUDED
