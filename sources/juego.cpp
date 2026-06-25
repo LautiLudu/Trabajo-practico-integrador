@@ -215,6 +215,10 @@ int calcularPtsS(int dadosSimulados[], int cantDadosSimulados, int vientoS1, int
     return puntos;
 }
 
+
+
+
+
 void modoSimulado(){
     system("cls");
 
@@ -227,6 +231,10 @@ void modoSimulado(){
 
     cout << "Presione cualquier tecla para empezar" << endl;
     system("pause > nul");
+
+    system("cls");
+
+    cout << "** MODO SIMULADO **" << endl;
 
     for(int i = 1; i <= cantDadosSimulados; i++){
     cout << "Valor del dado número " << i << ": ";
@@ -245,8 +253,8 @@ void modoSimulado(){
 
     for(int i = 0; i < cantDadosSimulados; i++){
     cout << dadosSimulados[i] << " ";
-
     }
+
     cout << endl;
 
     cout << "Ingrese el dado de viento número 1: ";
