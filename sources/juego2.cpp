@@ -31,24 +31,24 @@ void jugar2(string &nombreRec, int &puntajeRec){
 
     ptsJugador2 = jugar(jugador2, nombreRec, puntajeRec);
 
-    separacion();
-
     cout << "Resultados finales: " << endl;
     cout << jugador1 << ": " << ptsJugador1 << " puntos" << endl;
     cout << jugador2 << ": " << ptsJugador2 << " puntos" << endl;
 
+    separacion();
     if(ptsJugador1 > ptsJugador2){
-    cout << "Gana " << jugador1 << "!" << endl;
+    cout << "¡Gana " << jugador1 << "!" << endl;
 
     }else{
         if(ptsJugador2 > ptsJugador1){
-            cout << "Gana " << jugador2 << endl;
+            cout << "¡Gana " << jugador2 << "!"<< endl;
 
         }else{
         cout << "Empate" << endl;
         }
-
 }
+    separacion();
+
     cout << "Presione cualquier tecla para volver al menu";
     system("pause > nul");
 }
