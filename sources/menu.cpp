@@ -8,7 +8,6 @@ using namespace std;
 ///tarea de las funciones
 void menuOpciones()
 {
-
     cout << "----------------------------" << endl;
     cout << "** CAZADORES DE TORMENTAS **" << endl;
     cout << "----------------------------" << endl;
@@ -66,7 +65,7 @@ void menuPrincipal(){
         break;
         case 0:
         {
-        cout << "Gracias por jugar!" << endl;
+        cout << "¡Gracias por jugar!" << endl;
         return;
         }
         break;
@@ -76,8 +75,10 @@ void menuPrincipal(){
         }
         break;
         default:
-        cout << "Opcion invalida"<< endl;
-        system ("pause");
+        cout << "Opción inválida"<< endl;
+
+        cout << "Presione cualquier tecla para volver" << endl;
+        system ("pause > nul");
         }
 
     }
@@ -88,7 +89,7 @@ void creditos(){
     cout << "------------------------------" << endl;
     cout << "**         CRÉDITOS         **" << endl;
     cout << "------------------------------" << endl;
-    cout << "EQUIPO: LIGHTNING RUNNERS     " << endl;
+    cout << "EQUIPO:  Walter               " << endl;
     cout << "LEGAJO   APELLIDO   NOMBRE    " << endl;
     cout << "34936    LUDUEÑA    LAUTARO   " << endl;
     cout << "34948    MARTÍNEZ   DYLAN     " << endl;
@@ -105,6 +106,7 @@ void estadisticas(string nombreRec, int puntajeRec){
     cout << "------------------------------------" << endl;
     cout << "**          ESTADÍSTICAS          **" << endl;
     cout << "------------------------------------" << endl;
+
     if(nombreRec == ""){
         cout << "Todavía no hay partidas jugadas" << endl;
     }
