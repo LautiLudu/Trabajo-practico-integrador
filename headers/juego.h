@@ -5,7 +5,7 @@
 using namespace std;
 
 /// declaracion de funciones
-int jugar(string nombre, string &nombreRec, int &puntajeRec);
+int jugar(string nombre, string &nombreReco, int &puntajeRec);
 void jugar2(string &nombreRec, int &puntajeRec);
 
 void generarDados(int dados[], int cantDados);
