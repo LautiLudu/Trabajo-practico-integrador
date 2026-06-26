@@ -5,8 +5,6 @@
 using namespace std;
 
 void jugar2(string &nombreRec, int &puntajeRec){
-    bool partidaDe2 = true;
-
     int ptsJugador1 = 0;
     int ptsJugador2 = 0;
 
@@ -36,6 +34,7 @@ void jugar2(string &nombreRec, int &puntajeRec){
     cout << jugador2 << ": " << ptsJugador2 << " puntos" << endl;
 
     separacion();
+
     if(ptsJugador1 > ptsJugador2){
     cout << "¡Gana " << jugador1 << "!" << endl;
 
