@@ -21,7 +21,6 @@ int jugar(string nombre, string &nombreRecord, int &puntajeRecord){
     for(int ronda = 1; ronda <= cantRondas; ronda++){
     int tirada = 0;
 
-
     int ptsRonda = 0;
 
     cout << "** Empieza la ronda " << ronda << " **" << endl;
@@ -40,11 +39,13 @@ int jugar(string nombre, string &nombreRecord, int &puntajeRecord){
 
     while(true){
     tirada += 1;
+
     cout << "Tirada número " << tirada << endl;
 
     cout << "Los dados de viento son: " << viento1 << " y " << viento2 << endl;
 
     cout << "Tus dados son: ";
+
     generarDados(dados, cantDados);
 
     for(int i = 0; i < cantDados; i++){
@@ -55,7 +56,9 @@ int jugar(string nombre, string &nombreRecord, int &puntajeRecord){
 
     int bloqueados = contBloqueados(dados, cantDados, viento1, viento2);
     int ptsTirada = calcularPts(dados, cantDados, viento1, viento2);
+
     int cantOriginal = cantDados;
+
     cantDados -= bloqueados;
 
     cout << "Hay " << bloqueados << " dados bloqueados. Estos NO sumarán puntos" << endl;
@@ -65,7 +68,7 @@ int jugar(string nombre, string &nombreRecord, int &puntajeRecord){
     if(tormentaPerfecta(dados, cantOriginal, viento1, viento2) == true){
     cout << "------------------------------" << endl;
     cout << "      Tormenta perfecta!      " << endl;
-    cout << "Puntos de tirada multiplicados" << endl;
+    cout << " Puntos de tirada duplicados  " << endl;
     cout << "------------------------------" << endl;
 
     ptsTirada *= 2;
@@ -89,14 +92,14 @@ int jugar(string nombre, string &nombreRecord, int &puntajeRecord){
     if(ronda == 3){
         separacion();
 
-        /// 13
         cout << "**           Fin del juego           **" << endl;
+
         separacion();
     }else{
     separacion();
 
-    /// 17
     cout << "**         Fin de la ronda " << ronda << "         **" << endl;
+
     separacion();
     }
     break;
@@ -109,6 +112,7 @@ int jugar(string nombre, string &nombreRecord, int &puntajeRecord){
     cout << "pts acumulados en la ronda: " << ptsRonda << endl;
 
     char opcion;
+
     cout << "Deasea seguir jugando esta ronda? (S/N): ";
     cin >> opcion;
 
@@ -125,14 +129,25 @@ int jugar(string nombre, string &nombreRecord, int &puntajeRecord){
     }
 
     if(opcion == 'N' || opcion == 'n'){
-    cout << "Fin de la ronda " << ronda << endl;
+
+    if(ronda == 3){
+
+    cout << "**           Fin del juego           **" << endl;
+
     separacion();
+    }else{
+
+    cout << "**         Fin de la ronda " << ronda << "         **" << endl;
+
+    separacion();
+    }
     break;
     }
-
     }
     ptsTotales += ptsRonda;
+
     if(ronda == 3){
+
     cout << "Han acabado las 3 rondas" << endl;
     cout << "Su puntuación final es de: " << ptsTotales << endl;
 
@@ -149,8 +164,7 @@ int jugar(string nombre, string &nombreRecord, int &puntajeRecord){
 void generarDados(int dados[], int cantDados){
 
     ///la cantidad de dados va a variar dependiendo de la suerte del usuario
-    for(int i = 0; i < cantDados; i++)
-    {
+    for(int i = 0; i < cantDados; i++){
         dados[i] = rand()%6+1;
     }
 }
@@ -214,10 +228,6 @@ int calcularPtsS(int dadosSimulados[], int cantDadosSimulados, int vientoS1, int
     }
     return puntos;
 }
-
-
-
-
 
 void modoSimulado(){
     system("cls");
